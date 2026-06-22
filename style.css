@@ -1,0 +1,320 @@
+/* ==========================
+   CSS VARIABLES
+========================== */
+
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --primary-color: #2563eb;
+    --secondary-color: #6366f1;
+    --shadow: 0 10px 25px rgba(0,0,0,0.1);
+    --transition: 0.3s ease;
+}
+
+.dark-theme {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f1f5f9;
+    --primary-color: #60a5fa;
+    --secondary-color: #818cf8;
+    --shadow: 0 10px 25px rgba(255,255,255,0.05);
+}
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 5%;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.theme-btn {
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    padding: .8rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    min-height: 100vh;
+    align-items: center;
+
+    padding: 4rem 5%;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+}
+
+.hero-content span {
+    color: var(--primary-color);
+}
+
+.hero-content h2 {
+    margin: 1rem 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section {
+    padding: 5rem 5%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ==========================
+   ABOUT GRID
+========================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.about-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+}
+
+/* ==========================
+   SKILLS FLEXBOX
+========================== */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill {
+    padding: 1rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* ==========================
+   PROJECTS GRID
+========================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (min-width: 768px) {
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* ==========================
+   DESKTOP
+========================== */
+
+@media (min-width: 1024px) {
+
+    .about-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
